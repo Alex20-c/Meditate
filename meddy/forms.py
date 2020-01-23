@@ -1,10 +1,10 @@
 from django import forms
 from .models import Procedure,Profile
 
-# class ProcedureForm(forms.ModelForm):
-#     class Meta:
-#         model = Procedure
-#         exclude = ['user','user_procedure_id']
+class ProcedureForm(forms.ModelForm):
+    class Meta:
+        model = Procedure
+        exclude = ['user','user_procedure_id']
 
 
 class ProfileForm(forms.ModelForm):
