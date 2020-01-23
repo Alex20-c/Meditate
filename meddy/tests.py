@@ -39,10 +39,10 @@ class ProcedureTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_procedure,Procedure))
 
-    # def test_save_instance(self):
-    #     self.new_procedure.save_procedure()
-    #     procedure = Procedure.objects.all()
-    #     self.assertTrue(len(procedure)>0)
+    def test_save_instance(self):
+        self.new_procedure.save_procedure()
+        procedure = Procedure.objects.all()
+        self.assertTrue(len(procedure)>0)
 
     def test_delete_profile(self):
         self.new_procedure.delete_procedure()
