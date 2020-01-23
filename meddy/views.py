@@ -11,19 +11,19 @@ def home(request):
     all_procedure = Procedure.fetch_all_images()
     return render(request,"meditate/index.html",{"all_images":all_procedure})
 
-# @login_required(login_url='/accounts/login/')
-# def new_procedure(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = ProcedureForm(request.POST,request.FILES)
-#         if form.is_valid():
-#             user_image = form.save(commit=False)
-#             user_image.user = current_user
-#             user_image.save()
-#         return redirect('home')
-#     else:
-#         form = ProcedureForm()
-#     return render(request,"meditate/new_post.html",{"form":form})
+@login_required(login_url='/accounts/login/')
+def new_procedure(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProcedureForm(request.POST,request.FILES)
+        if form.is_valid():
+            user_image = form.save(commit=False)
+            user_image.user = current_user
+            user_image.save()
+        return redirect('home')
+    else:
+        form = ProcedureForm()
+    return render(request,"meditate/new_post.html",{"form":form})
 
 @login_required(login_url='/accounts/login/')
 def new_profile(request):
