@@ -8,7 +8,7 @@ urlpatterns=[
     url(r'^new/procedure$',views.new_procedure,name='new-procedure'),
     url(r'^profile/$',views.profile,name='profile'),
     url(r'^new_profile/$',views.new_profile,name = 'new_profile'),
-    # url(r'^edit/profile/$',views.profile_edit,name = 'edit_profile'),
+    url(r'^edit/profile/$',views.profile_edit,name = 'edit_profile'),
     url(r'^procedure/review/(\d+)',views.procedure_review,name='procedure_review'),
 ]
 if settings.DEBUG:
